@@ -1,0 +1,4 @@
+seq 5 | awk '{ if($1%2==0) { print $1 " 偶数" }}'
+seq 5 | awk '$1%2==0 { print $1 " 偶数" }'
+seq 5 | awk '$1%2==0 { print $1,"偶数" }'
+seq 5 | awk '$1%2==0 { printf("%s 偶数\n",$1) }'
