@@ -1,0 +1,1 @@
+seq 4 | awk '{print $1%2 ? "mkdir odd_" $1 : "mkdir even_" $1}' | bash
