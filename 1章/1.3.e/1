@@ -1,0 +1,2 @@
+seq 5 | awk '$1%2==0{print "奇数"}$1%2{print "偶数"}' | sort -r | uniq -c | awk '{print $2,$1}'
+seq 5 | awk '{print $1%2 ? "奇数":"偶数"}' | sort -r | uniq -c | awk '{print $2,$1}'
