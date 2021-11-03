@@ -1,0 +1,2 @@
+seq 5 | awk '{for(i=0; i<$1; i++){printf " "};print("x")}' | tac
+echo -e "    x\n   x\n  x\n x\nx"

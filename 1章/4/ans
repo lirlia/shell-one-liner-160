@@ -1,0 +1,3 @@
+grep "^10$" ./* | sed 's/:10//g' | xargs rm
+grep -l "^10$" -R tmp | xargs rm
+seq 100000 | xargs -P$(nproc) grep -l "^100$"

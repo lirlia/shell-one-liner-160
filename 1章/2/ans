@@ -1,0 +1,2 @@
+ls | sed -rn "s/^(.*)\.png$/\1.png \1.jpg/p" | xargs -n 2 convert
+ls *.png | sed "s/\.png//g" | xargs -I@ convert @.png @.jpg

@@ -1,0 +1,5 @@
+cat files.txt | grep "\.exe$"
+cat files.txt | awk '$1~"\\.exe$"{print $1}'
+grep "\.exe$" files.txt
+cat files.txt | sed -n "/\.exe$/p"
+cat files.txt | awk "/\.exe$/"
