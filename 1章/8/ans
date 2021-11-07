@@ -1,0 +1,6 @@
+# 自分で考えた
+all=$(wc -l access.log | awk '{print $1}'); gogo=$(grep -E ".*[0-9]...:(1[2-9]|2[0-3]):[0-9].:[0-9].*" access.log | wc -l) ; echo "午前:$((all-gogo))  午後: $gogo"
+# 解答
+gawk -F: '{print $(NF-2)}' access.log | gawk '{if ($1<12) {print "午前"} else {print "午後"}}' | sort | uniq -c
+# dateでAM・PMにする
+sed -r "s/.*:([0-9].:[0-9].:[0-9].).*/\1/g" access.log | gdate -f- +%p  | sort | uniq -c
